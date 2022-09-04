@@ -31,7 +31,6 @@ To get a local copy up and running follow these simple example steps.
 - LinkedIn: https://br.linkedin.com/in/pedroalmeidamarques/
 
 
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
