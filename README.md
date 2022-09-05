@@ -1,23 +1,21 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Blog App
+# Recipe App
 
-The Blog app is a classic example of a blog website. I created a fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
-
-For this project you will have full freedom in terms of visual design but you will need to keep the following wireframes:
+The Recipe app keeps track of all your recipes, and ingredients. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
 
-  <img src="./app/assets/images/wireframes.png" alt="">
+  <img src="./app/assets/images/recipe_erd_2_members.png" alt="">
 
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 
-- Copy this link `https://github.com/ppmarq1/my-blog-app`.
+- Copy this link `https://github.com/ppmarq1/recipe-app.git`.
 - Get the directory that you want to clone the repository.
 - Open the command prompt in this directory.
-- Write `https://github.com/ppmarq1/my-blog-app`.
-- Go to the repository folder in your command prompt `cd blog-app`.
+- Write `https://github.com/ppmarq1/recipe-app.git`.
+- Go to the repository folder in your command prompt `cd recipe-app`.
 
 - Follow these steps to run the app:
   - run `gem install`, then run `rails s`.
