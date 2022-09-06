@@ -28,6 +28,11 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: https://twitter.com/ppmarq1
 - LinkedIn: https://br.linkedin.com/in/pedroalmeidamarques/
 
+👤 **Tuğsem Saranlı**
+
+- GitHub: https://github.com/tugsem
+- Twitter: https://twitter.com/tugsemSaranli
+- LinkedIn: https://br.linkedin.com/in/tugsem/
 
 ## 🤝 Contributing
 
