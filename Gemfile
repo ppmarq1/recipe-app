@@ -65,6 +65,8 @@ group :development do
 
   gem 'capybara'
 
+  gem 'rspec-rails', '~> 4.0.0'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
