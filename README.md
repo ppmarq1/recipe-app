@@ -18,7 +18,7 @@ To get a local copy up and running follow these simple example steps.
 - Go to the repository folder in your command prompt `cd recipe-app`.
 
 - Follow these steps to run the app:
-  - run `gem install`, then run `rails s`.
+  - run `gem install`, then run `rails s`
 
 ## Authors
 
