@@ -18,6 +18,11 @@ gem 'pg', '~> 1.1'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+gem 'cancancan'
+
+gem "bootstrap", "~> 5.0"
+
+gem 'bootstrap_form', '~> 5.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
