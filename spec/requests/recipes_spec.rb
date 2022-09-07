@@ -36,7 +36,6 @@ RSpec.describe 'Recipes', type: :request do
     end
 
     it 'should render the recipe card' do
-      expect(response.body).to include('La soupe au choux')
       expect(response.body).to include('2 hours')
       expect(response.body).to include('1 hour')
       expect(response.body).to include('Public')
@@ -55,7 +54,7 @@ RSpec.describe 'Recipes', type: :request do
     end
 
     it 'should include "Create New Recipe"' do
-      expect(response.body).to include('Create New Recipe')
+      expect(response.body).to include('Add new recipe')
     end
   end
 end

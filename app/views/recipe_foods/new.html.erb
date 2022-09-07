@@ -4,8 +4,8 @@
   <%= form_with model: @recipe_food, url: recipe_recipe_foods_path, local: true do |f| %>
     <div class="d-flex">
       <%= f.number_field :quantity, min: 0, class:"form-control w-50", placeholder: "Quantity", autofocus: true %>
-      <%= f.select(:food_id, @food_list.map {|food| [food.name, food.id]}) %>
-      <%= f.hidden_field :recipe_id, value: @recipe.id %>
+      <%# <%= f.select(:food_id, @food_list.each do {|food| [food.name, food.id]}) %>
+      <%# <%= f.hidden_field :recipe_id, value: @recipe.id %> %>
       <%= f.submit 'Add ingredient', class:"btn btn-primary" %>
     </div>
   <% end %>

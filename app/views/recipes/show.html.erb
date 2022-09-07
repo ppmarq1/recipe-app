@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>
+  <%= @recipe.name %>
+  </h1>
+  <div>
+  <p>
+  <strong> Preparation time:<%= @recipe.preparation_time %>
+  </strong></p>
+  <P><strong>Cooking time:
+  <%= @recipe.cooking_time %>
+  </strong></p>
+  <p><strong><%= @recipe.description%></strong></p>
+  </div>
+  <div class="d-flex justify-content-between">
+    <%= link_to 'Generate shopping list', recipes_path, class: "btn text-light bg-dark col-sm-2" %>
+    <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn text-light bg-dark col-sm-2" %>
+  </div>
+  <hr>
+  <%= render @recipe.recipe_foods %>
+</div>
