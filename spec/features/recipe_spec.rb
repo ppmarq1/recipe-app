@@ -58,7 +58,6 @@ RSpec.describe 'Recipe page test', type: :feature do
       expect(page).to have_content('2 hours')
       expect(page).to have_content('Cooking time')
       expect(page).to have_content('1 hour')
-      expect(page).to have_content('Public')
       expect(page).to have_content('Chicken Salad description')
     end
 
