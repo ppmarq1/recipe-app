@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>This is the home page</h1>
+    <div class="m-4 f-right">
+        <%= link_to "Add food", new_food_path , class:"btn btn-primary" %>
+    </div>
+    <table class="table table-success table-striped text-center">
+    <caption>List of foods</caption>
+        <tr>
+            <th>Food</th>
+            <th>Measurement unit</th>
+            <th>Unit price</th>
+            <th>Actions</th>
+        </tr>
+    <% @foods.each do |food| %>
+        <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td>
+                <% if can? :destroy, food %>
+                    <div class="delete_food_action">
+                        <%= button_to "DELETE", { action: :destroy, id: food.id }, method: :delete, class:"btn btn-danger" %>
+                    </div>
+                <% end %> 
+            </td>
+        </tr>
+    <% end %>
+</table>
+</div>
+
+
