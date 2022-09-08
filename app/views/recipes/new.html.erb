@@ -17,6 +17,10 @@
             <%= f.label :description, class: "form-label" %>
             <%= f.text_field :description, class: "form-control" %>
         </div>
+        <div class="checkbox form-check form-switch mb-3">
+            <%= f.label :public, class: 'form-check-label', for: 'flexSwitchCheckDefault' %>
+            <%= f.check_box :public, class: 'form-check-input', id: 'flexSwitchCheckDefault' %>
+        </div>
         <%= f.submit class: "btn btn-primary" %>
     <% end %>
 </div>
