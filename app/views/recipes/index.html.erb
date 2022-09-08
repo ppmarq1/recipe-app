@@ -1,11 +1,23 @@
-
-<div class="my-5 container">
-<h1>My recipes</h1>
-<%= link_to 'Add new recipe', new_recipe_path, class:"btn btn-primary"%>
+<div class="add_recipe_action">
+  <%= link_to "Add recipe", new_recipe_path , class: "btn_add_recipe" %>
 </div>
 
-<% @recipes.each do |recipe|%>
-  <%= link_to recipe_path(recipe.id) do%>
-    <%= render recipe %>
-  <%end%>
-<%end%>
+<% @recipes.each do |recipe| %>
+  <% if can? :manage, recipe %>
+    <div>  
+      <div class="recipe_card">
+        <div class="recipe_name">
+          <h3><%= link_to "#{recipe.name}", recipe_path(recipe.id) %></h3>
+          <% if can? :destroy, recipe %>
+            <div class="delete_recipe_action">
+              <%= button_to "REMOVE", { action: :destroy, id: recipe.id }, method: :delete, class: "btn_delete_recipe"  %>
+            </div>
+          <% end %>
+        </div>
+        <div class="recipe_description">
+          <p><%= recipe.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

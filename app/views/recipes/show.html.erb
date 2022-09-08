@@ -1,20 +1,71 @@
-<div class="container">
-  <h1>
-  <%= @recipe.name %>
-  </h1>
-  <div>
-  <p>
-  <strong> Preparation time:<%= @recipe.preparation_time %>
-  </strong></p>
-  <P><strong>Cooking time:
-  <%= @recipe.cooking_time %>
-  </strong></p>
-  <p><strong><%= @recipe.description%></strong></p>
+<div class="recipe_details">
+  <%= link_to 'Back', recipes_path, class:"btn_back" %>
+  <div class="recipe_details_title">
+    <h3><%= @recipe.name %></h3>
   </div>
-  <div class="d-flex justify-content-between">
-    <%= link_to 'Generate shopping list', recipes_path, class: "btn text-light bg-dark col-sm-2" %>
-    <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn text-light bg-dark col-sm-2" %>
+  
+  <div class="recipe_details_time">
+    <div class="recipe_details_time_preparation">
+      <p>Preparation time: <%= @recipe.preparation_time %></p>
+      <p>Cooking time: <%= @recipe.cooking_time %></p>
+    </div>
+    <div class="recipe_details_time_cooking">
+      <% if can? :manage, @recipe %>
+        <% if @recipe.public? %>
+          <span>
+            <p>Public: </p>
+            <%= button_to "Unpublish", recipe_path(@recipe.id), method: :patch, class: "btn_update_public" %>
+          </span>
+        <% else %>
+          <span>
+            <p>Public: </p>
+            <%= button_to "Publish", recipe_path(@recipe.id), method: :patch, class: "btn_update_public" %>
+          </span>
+        <% end %>
+      <% else %>
+        <span>Recipe by <%= @recipe.user.name %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="recipe_details_description">
+    <p><%= @recipe.description %></p>
+  </div>
+
+  <div class="recipe_details_options">
+    <%= link_to "Generate shopping list", shopping_list_index_path , class: "btn_generate_shopping_list" %>
+    <% if can? :manage, @recipe %>
+      <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id) , class: "btn_add_ingredient" %>
+    <% end %>
   </div>
   <hr>
-  <%= render @recipe.recipe_foods %>
+  <div class="recipe_details_ingredients">
+    <table>
+        <thead>
+            <tr>
+                <th>Food</th>
+                <th>Quantity unit</th>
+                <th>Value price</th>
+                <% if current_user.id == @recipe.user_id %>
+                  <th>Actions<th>
+                <% end %> 
+            </tr>
+        </thead>
+        </tbody>
+          <% @recipe_foods.each do |recipe_food| %>
+              <tr>
+                  <td><%= recipe_food.food.name %></td>
+                  <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+                  <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
+                  <% if current_user.id == @recipe.user_id %>
+                    <td>
+                      <div class="delete_ingredient_action">
+                          <%= button_to "DELETE", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class: "btn_delete_ingredient" %>
+                      </div>
+                    </td>
+                  <% end %> 
+              </tr>
+          <% end %>
+        <tbody>
+    </table>
+  </div>
 </div>
