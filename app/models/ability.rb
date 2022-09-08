@@ -10,13 +10,13 @@ class Ability
     else
       can :read, :all
       can :manage, Food, user_id: user.id
-      # can :manage, Recipe, user_id: user.id
+      can :manage, Recipe, user_id: user.id
       can :destroy, Food do |food|
         food.user_id == user.id
       end
-      # can :destroy, Recipe do |recipe|
-      #   recipe.user_id == user.id
-      # end
+      can :destroy, Recipe do |recipe|
+        recipe.user_id == user.id
+      end
     end
     #
     # The first argument to `can` is the action you are giving the user

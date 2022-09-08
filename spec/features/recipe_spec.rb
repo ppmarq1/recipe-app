@@ -16,19 +16,19 @@ RSpec.describe 'Recipe page test', type: :feature do
     it 'check recipes#index path' do
       visit recipes_path
       expect(current_path).to eq(recipes_path)
-      expect(page).to have_text('Add recipe')
+      expect(page).to have_text('Add new recipe')
     end
 
     it 'Should display all user recipe details' do
       visit recipes_path
       expect(page).to have_content('Chicken Salad')
-      expect(page).to have_content('REMOVE')
+      expect(page).to have_content('remove')
       expect(page).to have_content('Chicken Salad description')
     end
 
     it "Should navigate to recipe's new page" do
       visit recipes_path
-      click_link 'Add recipe'
+      click_link 'Add new recipe'
       expect(current_path).to eq(new_recipe_path)
     end
   end
@@ -58,7 +58,6 @@ RSpec.describe 'Recipe page test', type: :feature do
       expect(page).to have_content('2 hours')
       expect(page).to have_content('Cooking time')
       expect(page).to have_content('1 hour')
-      expect(page).to have_content('Public')
       expect(page).to have_content('Chicken Salad description')
     end
 
