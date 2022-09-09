@@ -1,12 +1,12 @@
-<tr id="<%= dom_id recipe_food %>", class="bg-white border-b-2 text-slate-700 border-slate-700">
+<tr id="<%= dom_id recipe_food %>">
   <td class="p-4 font-medium"><%= recipe_food.food.name %></td>
   <td class="p-4 font-medium"><%= recipe_food.quantity %></td>
   <td class="p-4 font-medium">$<%= recipe_food.food.price * recipe_food.quantity %></td>
 
     <% if current_user.id == @recipe.user_id %>
-                    <td class="d-flex mx-auto">
-                      <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "btn btn-primary mx-2" %>
-                      <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class: "btn btn-danger mx-2" %>
+                    <td class="d-flex justify-content-evenly p-3">
+                      <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "btn btn-primary " %>
+                      <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class: "btn btn-danger" %>
                     </td>
     <% end %>
 </tr>

@@ -1,6 +1,5 @@
+
 <div class="container">
-<div class="bg-info row p-4 text-white">
-  <div class="text-center d-flex justify-content-between my-4 w-50">
   <h1>
   <%= @recipe.name %>
   </h1>
@@ -22,13 +21,15 @@
   <% end %>
   <hr>
 
-  <table>
+  <table class="table table-striped text-center">
+  <thead>
     <tr>
       <th>Food</th>
       <th>Quantity</th>
       <th>Price</th>
       <th>Action</th>
     </tr>
+    </thead>
     <% @recipe_foods.each do |recipe_food| %>
       <%= render recipe_food %>
     <% end %>
