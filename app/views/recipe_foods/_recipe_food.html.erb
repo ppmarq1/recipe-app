@@ -3,10 +3,10 @@
   <td class="p-4 font-medium"><%= recipe_food.quantity %></td>
   <td class="p-4 font-medium">$<%= recipe_food.food.price * recipe_food.quantity %></td>
 
-    <% if user_signed_in? %>
-      <td class="flex gap-4  justify-center">
-        <%= link_to 'modify', edit_recipe_recipe_food_path(@recipe, recipe_food), class:"p-4 font-medium hover:text-green-400"%>
-        <%= link_to 'delete', recipe_path(recipe_id: @recipe.id, id: recipe_food.id),  method: :delete, class:"p-4 font-medium hover:text-red-500" %>
-      </td>
+    <% if current_user.id == @recipe.user_id %>
+                    <td class="d-flex mx-auto">
+                      <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "btn btn-primary mx-2" %>
+                      <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class: "btn btn-danger mx-2" %>
+                    </td>
     <% end %>
 </tr>
