@@ -7,8 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">All recipes</a>
-          <%# <%= link_to 'Home', public_recipes_path %>
+         <%= link_to 'Public recipes', public_recipes_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to 'Food List', foods_path, class: "nav-link"%>
@@ -21,6 +20,7 @@
            <%# <%= link_to 'shopping List', shopping_list_path %>
         </li>
       </ul>
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
     </div>
   </div>
 </nav>
