@@ -1,0 +1,19 @@
+<h1 class="text-center">Shopping List</h1>
+<div class="d-flex justify-content-between m-3 mx-auto w-75">
+    <p>Amount of food items to buy: <%= @total_foods %></p>
+    <p>Total value of food needed: $<%= @total_price %></p>
+</div>
+<table class="table table-success table-striped text-center">
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    <% @food_items_to_buy.each do |item| %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= "#{item.quantity} #{item.measurement_unit}" %> </td>
+            <td>$ <%= item.price %></td>
+        </tr>
+    <% end %>
+</table>

@@ -15,7 +15,7 @@
   <hr>
   <% if can? :manage, @recipe %>
     <div class="d-flex my-4 mx-auto justify-content-between w-50">
-      <%= link_to "Generate shopping list", shopping_list_index_path, class: "btn btn-outline-primary" %>
+      <%= link_to "Generate shopping list", general_shopping_list_index_path, class: "btn btn-outline-primary" %>
       <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id) , class: "btn btn-outline-primary" %>
     </div>
   <% end %>
