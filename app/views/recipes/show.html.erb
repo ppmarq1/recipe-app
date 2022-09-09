@@ -13,8 +13,21 @@
   </div>
   <div class="d-flex justify-content-between">
     <%= link_to 'Generate shopping list', recipes_path, class: "btn text-light bg-dark col-sm-2" %>
-    <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn text-light bg-dark col-sm-2" %>
+    <%# <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn text-light bg-dark col-sm-2" %>
   </div>
   <hr>
-  <%= render @recipe.recipe_foods %>
+
+  <table>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+    <% @recipe_foods.each do |recipe_food| %>
+      <%= render recipe_food %>
+    <% end %>
+  </table>
+
+<%= link_to "New recipe food", new_recipe_recipe_food_path(@recipe.id) %>
 </div>
