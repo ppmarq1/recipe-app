@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+  post  'recipes/:recipe_id/recipe_foods', to: 'recipe_foods#create'
+  patch '/recipes/:recipe_id/recipe_foods', to: 'recipe_foods#update', as: 'edit_recipe_recipe_food'
 
   resources :users
   resources :foods, only: [:index, :show, :new, :create, :destroy]

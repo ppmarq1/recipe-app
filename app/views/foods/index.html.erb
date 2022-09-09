@@ -1,5 +1,4 @@
 <div class="container">
-    <h1>This is the home page</h1>
     <div class="m-4 f-right">
         <%= link_to "Add food", new_food_path , class:"btn btn-primary" %>
     </div>
@@ -21,7 +20,7 @@
                     <div class="delete_food_action">
                         <%= button_to "DELETE", { action: :destroy, id: food.id }, method: :delete, class:"btn btn-danger" %>
                     </div>
-                <% end %> 
+                <% end %>
             </td>
         </tr>
     <% end %>

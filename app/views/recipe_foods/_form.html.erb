@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="inventory-heading">Add ingredient</h1>
+
+<%= form_with(model: [recipe, recipe_food], url: recipe_recipe_foods_path, method: :post) do |f| %>
+        <div class="mb-3">
+            <%= f.label :quantity, class: "form-label" %>
+            <%= f.text_field :quantity, class: "form-control" %>
+        </div>
+        <div class="w-full px-4 py-3 border flex justify-between">
+            <%= f.label :food_id, style: "display: block" %>
+            <%= f.collection_select(:food_id, Food.all, :id, :name, class:"w-full px-4 py-3 border") %>
+        </div>
+        <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+</div>
