@@ -1,6 +1,4 @@
 <div class="container">
-<h1>Recipes for all users</h1>
-
 <% @public_recipes.each do |recipe|%>
   <%= render  "/public_recipes/recipe", recipe: recipe %>
 <%end%>
