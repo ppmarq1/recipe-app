@@ -1,0 +1,16 @@
+<div class="card p-3 row mb-3">
+  <div class="col">
+    <h2><%= link_to recipe.name, recipe %></h2>
+    <p>By: <%= recipe.user.name %></p>
+  </div>
+  <div class="col">
+      <p>Total food items:<%= recipe.recipe_foods.size%></p>
+      <p>Total price:
+      <% recipe.recipe_foods.each do |recipe_food| %>
+      <% @price = 0%>
+      <% @price += recipe_food.food.price * recipe_food.quantity%>
+      <%end%>
+      <%= @price %>
+      <p>
+  </div>
+</div>
