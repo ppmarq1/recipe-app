@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1>
   <%= @recipe.name %>
@@ -11,10 +12,28 @@
   </strong></p>
   <p><strong><%= @recipe.description%></strong></p>
   </div>
-  <div class="d-flex justify-content-between">
-    <%= link_to 'Generate shopping list', recipes_path, class: "btn text-light bg-dark col-sm-2" %>
-    <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe.id), class: "btn text-light bg-dark col-sm-2" %>
-  </div>
   <hr>
-  <%= render @recipe.recipe_foods %>
+  <% if can? :manage, @recipe %>
+    <div class="d-flex my-4 mx-auto justify-content-between w-50">
+      <%= link_to "Generate shopping list", shopping_list_index_path, class: "btn btn-outline-primary" %>
+      <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id) , class: "btn btn-outline-primary" %>
+    </div>
+  <% end %>
+  <hr>
+
+  <table class="table table-striped text-center">
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <% @recipe_foods.each do |recipe_food| %>
+      <%= render recipe_food %>
+    <% end %>
+  </table>
+
+<%= link_to "New recipe food", new_recipe_recipe_food_path(@recipe.id) %>
 </div>
