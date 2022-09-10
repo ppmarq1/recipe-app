@@ -14,7 +14,7 @@ gem 'bullet'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 
-gem 'pg', '~> 1.1'
+# gem 'pg', '~> 1.1'
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
