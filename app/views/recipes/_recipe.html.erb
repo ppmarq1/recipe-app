@@ -1,0 +1,15 @@
+<div class="container border mb-5">
+<div class="row p-3 align-items-center">
+  <div class="col">
+    <h2>
+    <%= recipe.name %>
+    </h2>
+    <%= link_to 'Remove', { action: :destroy, id: recipe.id }, method: :delete%>
+  </div>
+  <div class="col">
+    <p>
+    <%= recipe.description %>
+  </p>
+  </div>
+</div>
+</div>

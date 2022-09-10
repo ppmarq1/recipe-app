@@ -1,0 +1,5 @@
+<div class="container">
+<% @public_recipes.each do |recipe|%>
+  <%= render  "/public_recipes/recipe", recipe: recipe %>
+<%end%>
+</div>

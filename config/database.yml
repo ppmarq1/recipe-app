@@ -14,12 +14,6 @@
 # Configure Using Gemfile
 # gem "pg"
 #
-test:
-  <<: *default
-  database: test_blog_app
-  host: 127.0.0.1
-  username: postgres
-  password: Eduardo1!@
 
 default: &default
   adapter: postgresql
@@ -30,10 +24,10 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 development:
   <<: *default
-  database: blog_app_development
+  database: recipe_app_development
   username: postgres
   password: Eduardo1!@
-  
+  #password: Martial@5009
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
   #username: Project
@@ -58,7 +52,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: blog_app_test
+  database: recipe_app_test
+  host: 127.0.0.1
+  username: postgres
+  password: Eduardo1!@
+
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -79,8 +77,8 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  database: blog_app_production
-  username: blog_app
-  password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>
+#production:
+#  <<: *default
+ # database: recipe_app_production
+ # username: recipe_app
+ # password: <%= ENV["recipe_APP_DATABASE_PASSWORD"] %>
