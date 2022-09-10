@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'general_shopping_list/index'
+  #get 'general_shopping_list/index'
 
   devise_for :users
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
 
-  root 'public_recipes#index'
+  root 'foods#index'
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

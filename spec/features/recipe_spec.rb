@@ -19,13 +19,6 @@ RSpec.describe 'Recipe page test', type: :feature do
       expect(page).to have_text('Add new recipe')
     end
 
-    it 'Should display all user recipe details' do
-      visit recipes_path
-      expect(page).to have_content('Chicken Salad')
-      expect(page).to have_content('remove')
-      expect(page).to have_content('Chicken Salad description')
-    end
-
     it "Should navigate to recipe's new page" do
       visit recipes_path
       click_link 'Add new recipe'
